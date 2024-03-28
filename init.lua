@@ -37,6 +37,7 @@ return {
     },
     ui = {
       border = "rounded",
+      backdrop = 100,
     }
   },
 

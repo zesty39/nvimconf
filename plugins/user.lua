@@ -81,10 +81,12 @@ return {
   -- surround
   {
     "kylechui/nvim-surround",
-    version = "main", -- Use for stability; omit to use `main` branch for the latest features
-    event = "BufEnter",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup()
+    end,
   },
-
   -- org mode
   {
     "nvim-neorg/neorg",
