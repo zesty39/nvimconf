@@ -89,10 +89,20 @@ return {
   },
   -- org mode
   {
+    "vhyrro/luarocks.nvim",
+    priority = 1000,
+    config = true,
+    opts = {
+    luarocks_build_args = {
+      "--with-lua-include=/usr/include",
+    },
+  },
+  },
+  {
     "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    event = "VeryLazy",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    lazy = false,
+    dependencies = { "luarocks.nvim", "nvim-treesitter/nvim-treesitter" },
+    version = "*",
     config = function()
       require("neorg").setup {
         load = {
